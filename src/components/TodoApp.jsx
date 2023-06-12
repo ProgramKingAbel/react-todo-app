@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Header from '@/components/Header';
+import TodosLogic from '@/components/TodosLogic';
 
 const TodoApp = () => {
     return (
-        <div>
-            <h1>Hello World!</h1>
-            <p>Im a react Component</p>
-        </div>
+        <>
+            <Header />
+            <TodosLogic />
+        </>
     );
 };
 
