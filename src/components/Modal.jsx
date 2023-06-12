@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import useOnClickOutside from "@/utils/useOnClickOutside";
 
 const Modal = () => {
