@@ -1,10 +1,10 @@
-import React from 'react'
+import TodoItem from "@/components/TodoItem";
 
-const TodoList = (props) => {
+const TodoList = ({todosProps}) => {
   return (
     <ul>
-          {props.todoProps.map((todo) => (
-              <li>{ todo.title }</li>
+          {todosProps.map((todo) => (
+              <TodoItem itemProp={ todo } />
           ))}
     </ul>
   )

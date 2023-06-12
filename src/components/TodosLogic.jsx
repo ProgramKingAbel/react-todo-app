@@ -1,5 +1,6 @@
 import React from 'react';
 import InputTodo from '@/components/InputTodo';
+import TodoList from '@/components/TodoList';
 
 const TodosLogic = () => {
     const todos = [
@@ -22,7 +23,7 @@ const TodosLogic = () => {
     return (
         <div>
         <InputTodo />    
-            <TodoList todosProps={ todos } />
+         <TodoList todosProps={ todos } />
       </div>
   )
 }
