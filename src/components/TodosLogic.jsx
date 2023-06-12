@@ -1,5 +1,5 @@
 import React from 'react';
-import { flushSync } from 'react-dom';
+import InputTodo from '@/components/InputTodo';
 
 const TodosLogic = () => {
     const todos = [
@@ -19,12 +19,11 @@ const TodosLogic = () => {
             complete: false,
         },
     ]
-  return (
-      <ul>
-          {todos.map((todo) => (
-              <li>{ todo.title }</li>
-          ))}
-    </ul>
+    return (
+        <div>
+        <InputTodo />    
+            <TodoList todosProps={ todos } />
+      </div>
   )
 }
 
