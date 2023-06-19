@@ -13,6 +13,7 @@ const Form = () => {
     carBrand: "",
     isChecked: false,
     gender: "",
+    price: 0,
   });
 
   const handler = (e) => {
@@ -23,10 +24,15 @@ const Form = () => {
     }))
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(state);
+  }
+
   return (
     <>
       <h1>Controlled Forms</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           First Name: {" "}
           
@@ -85,6 +91,18 @@ const Form = () => {
           /> {" "}
           Female
         </label>
+        <label>
+          Price (between 0 and 50)
+          <input
+            type='range'
+            name='price'
+            min='0'
+            max='50'
+            value={state.price}
+            onChange={handler}
+          />
+        </label>
+        <button>Submit</button>
       </form>
       <h5>First name: {state.fname}</h5>
       <h5>Last name: {state.lname}</h5>
@@ -95,7 +113,8 @@ const Form = () => {
       <p>Message: {state.message}</p>
       <h5>Favourite Car brand: { state.carBrand }</h5>
       <h5>Is it checked: {state.isChecked ? "Yes" : "No"}</h5>
-      <h5>Gender: { state.gender }</h5>
+      <h5>Gender: {state.gender}</h5>
+      <h5>Price: ${ state.price }</h5>
     </>
   )
 }
