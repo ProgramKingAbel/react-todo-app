@@ -11,12 +11,14 @@ const Form = () => {
     lname: "",
     message: "",
     carBrand: "",
+    isChecked: false,
   });
 
   const handler = (e) => {
+    const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
     setState((state) => ({
       ...state,
-      [e.target.name]: e.target.value
+      [e.target.name]: value
     }))
   }
 
@@ -53,6 +55,16 @@ const Form = () => {
             {carBrandOptions}
           </select>
         </label>
+        <label>
+          <input
+            type='checkbox'
+            name='isChecked'
+            checked={state.isChecked}
+            onChange={handler}
+          />
+            Is Checked?
+          
+        </label>
       </form>
       <h5>First name: {state.fname}</h5>
       <h5>Last name: {state.lname}</h5>
@@ -62,6 +74,7 @@ const Form = () => {
       </h5>
       <p>Message: {state.message}</p>
       <h5>Favourite Car brand: { state.carBrand }</h5>
+      <h5>Is it checked: { state.isChecked ? "Yes" : "No" }</h5>
     </>
   )
 }
