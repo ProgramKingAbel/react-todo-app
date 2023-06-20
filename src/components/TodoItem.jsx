@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from '@/styles/TodoItem.module.css';
 
-const TodoItem = ({ itemProp, handleChange, delTodo }) => {
+const TodoItem = ({ itemProp, handleChange, delTodo, setUpdate  }) => {
 
 
 
@@ -9,6 +9,12 @@ const TodoItem = ({ itemProp, handleChange, delTodo }) => {
     const handleEditing = () => {
         setEditing(true);
     }
+
+    const handleUpdatedDone = (event) => {
+        if (event.key === 'Enter') {
+          setEditing(false);
+        }
+      };
 
     let viewMode = {};
     let editMode = {};
@@ -29,7 +35,7 @@ const TodoItem = ({ itemProp, handleChange, delTodo }) => {
 
     return (
         <li className={styles.item}>
-            <div className={styles.content}>
+            <div className={styles.content} style={viewMode}>
 
             <input
                 type='checkbox'
@@ -50,6 +56,8 @@ const TodoItem = ({ itemProp, handleChange, delTodo }) => {
       value={itemProp.title}
                 className={styles.textInput}
                 style={editMode}
+                onChange={(e) => setUpdate(e.target.value, itemProp.id)}
+                onKeyDown={handleUpdatedDone}
     />
         </li>
     )
