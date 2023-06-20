@@ -8,9 +8,13 @@ const InputTodo = ({addTodoItem}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(title);
-    addTodoItem(title)
-    setTitle('');
+    if (title.trim()) {
+      addTodoItem(title)
+      setTitle('');
+    } else {
+      alert('Please add Item');
+    }
+   
   }
   return (
     <form onSubmit={handleSubmit}>
