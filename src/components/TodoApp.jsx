@@ -10,7 +10,7 @@ const TodoApp = () => {
         
             <div className="wrapper">
                 <div className="todos">
-                <Navbar />
+                {/* <Navbar /> */}
             {/* <Modal /> */}
             <Header />
             <TodosLogic />
