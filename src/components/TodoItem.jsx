@@ -59,7 +59,7 @@ const TodoItem = ({ itemProp, handleChange, delTodo, setUpdate  }) => {
       value={updateInput}
                 className={styles.textInput}
                 style={editMode}
-                onChange={(e) => setUpdate(e.target.value)}
+                onChange={(e) => setUpdateInput(e.target.value)}
                 onKeyDown={handleUpdatedDone}
     />
         </li>
