@@ -15,7 +15,8 @@ const Navbar = () => {
       ];
     return (
         <nav className="navbar">
-        <ul>
+        <ul style={{display:'flex', listStyle:'none', background: 'grey', width: '85%', margin:' 0 auto', padding:'2rem', gap: '2rem',  borderRadius: 'calc(0.1 * 100px)',
+    boxShadow: '0px 4px 14px 0px rgba(70, 70, 70, 0.38)'}}>
           {links.map((link) => {
             return (
               <li key={link.text}>

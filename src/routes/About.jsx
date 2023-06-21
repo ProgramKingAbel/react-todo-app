@@ -2,7 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 const About = () => {
   return (
     <>
-      <h1>About page.</h1>
+      <h1>About page. with subroutes, Click below.</h1>
       <div className="about">
         <ul className="about_list">
           <li>
