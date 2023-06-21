@@ -8,9 +8,9 @@ const domContainer = document.getElementById('root');
 const root = ReactDOM.createRoot(domContainer);
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
+        <HashRouter>
         <TodoApp />
-        </BrowserRouter>
+        </HashRouter>
     </React.StrictMode>
     
 )
