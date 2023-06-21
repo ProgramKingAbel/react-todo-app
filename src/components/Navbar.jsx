@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
+
 import useOnClickOutside from "@/utils/useOnClickOutside";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     // const [dropdown, setDropdown] = useState(false);   
@@ -17,7 +19,9 @@ const Navbar = () => {
           {links.map((link) => {
             return (
               <li key={link.text}>
-                <a href={link.path}>{link.text}</a>
+                    <NavLink to={link.path}
+                    
+                    >{link.text}</NavLink>
               </li>
             );
           })}
